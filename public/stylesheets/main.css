@@ -1,0 +1,26 @@
+.jumbotron{
+    margin-top: 20px;
+    padding: 32px;
+}
+
+i{
+    font-size: 1.3em;
+    opacity: 0.9;
+}
+
+td a{
+    padding: 6px;
+}
+
+form{
+    width: 30%;
+    margin: 25px auto;
+}
+
+#delete{
+    display: inline;
+}
+
+#edit{
+    margin-top: 50px;
+}

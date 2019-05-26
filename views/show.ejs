@@ -1,0 +1,59 @@
+<% include ./partials/header %>
+
+
+<div class="container">
+        <h1 class="display-4 text-center">Student Details</h1>
+        <table class="table table-hover" id="edit">
+                        <tbody>
+                                <tr>
+                                        <th scope="col">Sl_no</th>
+                                        <td> <%= student.sl_no %> </td>
+                                </tr>
+                                <tr>
+                                        <th scope="col">Roll Number</th>
+                                        <td> <%= student.roll_no %> </td>
+                                </tr>               
+                                <tr>
+                                        <th scope="col">Name</th>
+                                        <td> <%= student.name %> </td>
+                                </tr>
+                                <tr>
+                                        <th scope="col">Date Of Birth</th>
+                                        <td> <%= student.dob %> </td>
+                                </tr>
+                                <tr>
+                                        <th scope="col">Father Name</th>
+                                        <td> <%= student.father_name %> </td>
+                                </tr>
+                                <tr>
+                                        <th scope="col">Mobile Number</th>
+                                        <td> <%= student.mob_no %> </td>
+                                </tr>
+                                <tr>
+                                        <th scope="col">Total Fees</th>
+                                        <td> <%= student.total_fees %> </td>
+                                </tr>
+                                <tr>
+                                        <th scope="col">Fees Paid</th>
+                                        <td> <%= student.fees_paid %> </td>
+                                </tr>
+                                <tr>
+                                        <th scope="col">Balance</th>
+                                        <td> <%= student.balance %> </td>
+                                </tr>
+
+                        </tbody>
+                </table>        
+
+        <a href="#" class="btn btn-success">New Transaction</a>
+
+        <a href="/students/<%= student._id %>/edit" class="btn btn-warning">Edit Student</a>
+
+        <form id = "delete" action="/students/<%= student._id %>?_method=DELETE" method = "POST">
+                <button type="submit" class="btn btn-danger">Delete Student</button>
+        </form>
+</div>
+
+
+
+<% include ./partials/footer %>
