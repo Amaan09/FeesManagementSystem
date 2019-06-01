@@ -1,34 +1,17 @@
-var express         = require("express");
-    app             = express();
-    bodyParser      = require("body-parser");
-    mongoose        = require("mongoose");
+var express         = require("express"),
+    app             = express(),
+    bodyParser      = require("body-parser"),
+    mongoose        = require("mongoose"),
+    Student         = require("./models/student"),
+    User            = require("./models/user.js"),
     methodOverride  = require("method-override");
 
-
 mongoose.connect("mongodb://localhost:27017/fms",{useNewUrlParser : true});
-
 
 app.set("view engine","ejs");
 app.use(express.static("public"));
 app.use(bodyParser.urlencoded({extended : true}));
 app.use(methodOverride("_method"));
-
-// Mongoose Schema && Mongoose Model
-var studentSchema = new mongoose.Schema({
-    sl_no       : Number,
-    roll_no     : Number,
-    name        : String,
-    class       : String,
-    dob         : Date,
-    father_name : String,
-    mob_no      : Number,
-    total_fees  : Number,
-    fees_paid   : Number,
-    balance     : Number
-});
-
-var Student = mongoose.model("Student",studentSchema);
-
 
 // Landing Route
 app.get("/",function(req,res){
